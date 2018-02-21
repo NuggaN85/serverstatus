@@ -6,8 +6,6 @@
  * Licensed under CC BY 3.0
 ```
 
-TESTING SCRIPT -> http://papprotect.livehost.fr/github/upordown.php
-
 #### Cross-browser
 
 Browser support is tested in Saucelabs:
