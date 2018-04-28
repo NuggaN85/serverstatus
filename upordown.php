@@ -14,18 +14,12 @@ $servers = array(
         'info' => '<i class="fa fa-check-circle"></i> Up',
         'purpose' => '100.00%'
     ),
-    'WEB MAIL' => array(
+    'WEBMAIL' => array(
         'ip' => 'exemple.com',
         'port' => 2096,
         'info' => '<i class="fa fa-check-circle"></i> Up',
         'purpose' => '100.00%'
 	),
-    'CPANEL' => array(
-        'ip' => 'exemple.com',
-        'port' => 2083,
-        'info' => '<i class="fa fa-check-circle"></i> Up',
-        'purpose' => '100.00%'	
-    ),
     'MYSQL' => array(
         'ip' => 'exemple.com',
         'port' => 3306,
@@ -60,10 +54,10 @@ foreach ($servers as $name => $info) {
     <meta content="utf-8" http-equiv="encoding">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <title><?php echo $title; ?></title>
-	<!-- Bootstrap CSS -->
- 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/cosmo/bootstrap.min.css">
+     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/cosmo/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
-	<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.6/css/all.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.6/css/all.css">
 <style type="text/css">
 * {
     box-sizing: border-box;
@@ -328,4 +322,5 @@ function in_array_r($needle, $haystack, $strict = false) {
     }
     return false;
 }
+
 ?>
