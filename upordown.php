@@ -139,7 +139,7 @@ html body {
     padding: 0;
     text-align: center;
     background-color: #222;
-    background-image: url(https://hdwallsource.com/img/2014/4/free-background-wallpaper-22918-23554-hd-wallpapers.jpg);
+    background-image: url(//hdwallsource.com/img/2014/4/free-background-wallpaper-22918-23554-hd-wallpapers.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -207,7 +207,7 @@ html body .dialog > p {
 	
 	  <div class="dialog">
     <div>
-	  <img class="logo" src="https://www.updownkc.com/wp-content/uploads/2013/11/updownblack.png" width="360" height="106">
+	  <img class="logo" src="//www.updownkc.com/wp-content/uploads/2013/11/updownblack.png" width="360" height="106">
       <h1><?php echo $title; ?></h1>
              <div class="container">         
             <table class="table">
@@ -236,7 +236,7 @@ html body .dialog > p {
             </table>
         </div>
     </div>
-    <p>Copyright © Tchatland. All rights reserved.</p>
+    <p>Copyright © exemple.com. All rights reserved.</p>
   </div>
   
     <body>
