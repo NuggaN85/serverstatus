@@ -3,25 +3,31 @@
 $title = "Uptime Server Status";
 $servers = array(
     'HTTP/1' => array(
-        'ip' => 'exemple.com',
+        'ip' => 'localhost',
         'port' => 80,
         'info' => '<i class="fa fa-check-circle"></i> Up',
         'purpose' => '100.00%'
     ),
     'HTTPS/2' => array(
-        'ip' => 'exemple.com',
+        'ip' => 'localhost',
         'port' => 443,
         'info' => '<i class="fa fa-check-circle"></i> Up',
         'purpose' => '100.00%'
     ),
     'WEBMAIL' => array(
-        'ip' => 'exemple.com',
+        'ip' => 'localhost',
         'port' => 2096,
         'info' => '<i class="fa fa-check-circle"></i> Up',
         'purpose' => '100.00%'
-	),
+    ),
+    'MENCACHED' => array(
+        'ip' => 'localhost',
+        'port' => 11211,
+        'info' => '<i class="fa fa-check-circle"></i> Up',
+        'purpose' => '100.00%'
+    ),
     'MYSQL' => array(
-        'ip' => 'exemple.com',
+        'ip' => 'localhost',
         'port' => 3306,
         'info' => '<i class="fa fa-times"></i> Major Outage',
         'purpose' => 'Error'
