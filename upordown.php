@@ -20,9 +20,9 @@ $servers = array(
         'info' => '<i class="fa fa-check-circle"></i> Up',
         'purpose' => '100.00%'
     ),
-    'MENCACHED' => array(
+    'SMTP' => array(
         'ip' => 'localhost',
-        'port' => 11211,
+        'port' => 587,
         'info' => '<i class="fa fa-check-circle"></i> Up',
         'purpose' => '100.00%'
     ),
