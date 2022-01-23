@@ -6,12 +6,6 @@
  * Licensed under CC BY 3.0
 ```
 
-#### Cross-browser
-
-Browser support is tested in Saucelabs:
-
-[![Sauce Test Status](https://saucelabs.com/browser-matrix/socket.svg)](https://twitter.com/nuggan85)
-
 ## :fr: Contribuer
 
 [![Donate](https://img.shields.io/badge/paypal-donate-yellow.svg?style=flat)](https://www.paypal.me/nuggan85)
