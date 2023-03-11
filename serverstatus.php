@@ -1,55 +1,52 @@
 <?php
 
-$title = "Uptime Server Status";
-$servers = array(
-    'HTTP/1' => array(
+define('SERVERS', [
+    'HTTP/1' => [
         'ip' => 'localhost',
         'port' => 80,
-        'info' => '<i class="fa fa-check-circle"></i> Up',
+        'status' => '<i class="fa fa-check-circle"></i> Up',
         'purpose' => '100.00%'
-    ),
-    'HTTPS/2' => array(
+    ],
+    'HTTPS/2' => [
         'ip' => 'localhost',
         'port' => 443,
-        'info' => '<i class="fa fa-check-circle"></i> Up',
+        'status' => '<i class="fa fa-check-circle"></i> Up',
         'purpose' => '100.00%'
-    ),
-    'WEBMAIL' => array(
+    ],
+    'WEBMAIL' => [
         'ip' => 'localhost',
         'port' => 2096,
-        'info' => '<i class="fa fa-check-circle"></i> Up',
+        'status' => '<i class="fa fa-check-circle"></i> Up',
         'purpose' => '100.00%'
-    ),
-    'SMTP' => array(
+    ],
+    'SMTP' => [
         'ip' => 'localhost',
         'port' => 587,
-        'info' => '<i class="fa fa-check-circle"></i> Up',
+        'status' => '<i class="fa fa-check-circle"></i> Up',
         'purpose' => '100.00%'
-    ),
-    'MYSQL' => array(
+    ],
+    'MYSQL' => [
         'ip' => 'localhost',
         'port' => 3306,
-        'info' => '<i class="fa fa-times"></i> Major Outage',
+        'status' => '<i class="fa fa-times"></i> Major Outage',
         'purpose' => 'Error'
-    )
-);
+    ]
+]);
+
 if (isset($_GET['host'])) {
     $host = $_GET['host'];
-    if (isset($servers[$host])) {
+    if (isset(SERVERS[$host])) {
         header('Content-Type: application/json');
-        $return = array(
-            'status' => test($servers[$host])
-        );
-        echo json_encode($return);
+        $status = test(SERVERS[$host]);
+        $response = ['status' => $status];
+        echo json_encode($response);
         exit;
     } else {
-        header("HTTP/1.1 404 Not Found");
+        header('HTTP/1.1 404 Not Found');
     }
 }
-$names = array();
-foreach ($servers as $name => $info) {
-    $names[$name] = md5($name);
-}
+
+$title = 'Uptime Server Status';
 ?>
 
 <!doctype html>
@@ -67,26 +64,18 @@ foreach ($servers as $name => $info) {
 <style type="text/css">
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-html {
-    margin: 0em;
-    padding: 0;
+html, body {
     height: 100%;
     width: 100%;
+    font-family: sans-serif, 'trebuchet ms', 'lucida grande', 'lucida sans unicode', arial, helvetica, sans-serif;
 }
 
 a {
     outline: none;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif,'trebuchet ms','lucida grande','lucida sans unicode',arial,helvetica,sans-serif;
-    font-size: 14px;
-    width: 100%;
-    height: 100%;
 }
 
 input:focus, select:focus, textarea:focus, button:focus {
@@ -94,12 +83,11 @@ input:focus, select:focus, textarea:focus, button:focus {
 }
 
 p {
-    padding: 0;
     margin: 0;
 }
 
 img {
-    border: 0px;
+    border: 0;
 }
 
 h1, h2, h3 {
@@ -110,22 +98,18 @@ h1, h2, h3 {
 h2 {
     font-size: 1.5em;
     margin-bottom: 5px;
-    line-height: 1.1em;
+    line-height: 1.1;
 }
 
-ul {
+ul, li {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-li {
-    list-style: none;
-}
-
 button {
     border: none;
-    outline: none !important;
+    outline: none;
     cursor: pointer;
 }
 
@@ -134,64 +118,44 @@ table {
 }
 
 html {
-    margin: 0;
-    padding: 0;
-}
-
-html body {
-    font-family: arial,sans-serif;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    background-color: #222;
-    background-image: url(//hdwallsource.com/img/2014/4/free-background-wallpaper-22918-23554-hd-wallpapers.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
+    background: url(//hdwallsource.com/img/2014/4/free-background-wallpaper-22918-23554-hd-wallpapers.jpg) fixed center / cover #222;
     color: #2e2f30;
 }
 
-html body .dialog {
-    width: 500px;
-    max-width: 98%;
+.dialog {
+    width: 98%;
+    max-width: 500px;
     margin: 30vh auto 0;
 }
 
-html body .dialog > div {
+.dialog > div {
     padding: 7px 10px 0;
     border: 1px solid #ccc;
-    border-top: #03add8 solid 4px;
-    border-right-color: #999;
-    border-bottom-color: #bbb;
-    border-left-color: #999;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
+    border-top: 4px solid #03add8;
+    border-radius: 9px;
     background-color: #ccc;
     box-shadow: 0 3px 8px rgba(50,50,50,.17);
 }
 
-html body .dialog > div img {
+.dialog > div img {
     display: block;
     width: 90%;
     height: auto;
     margin: 0 auto;
 }
 
-html body .dialog > div h1 {
+.dialog > div h1 {
     font-size: 100%;
-    line-height: 1.5em;
+    line-height: 1.5;
     color: #730e15;
 }
 
-html body .dialog > p {
+.dialog > p {
     margin: 0 0 1em;
     padding: 1em;
     color: #666;
     border: 1px solid #ccc;
-    border-bottom-right-radius: 4px;
-    border-bottom-left-radius: 4px;
+    border-radius: 0 0 4px 4px;
     background-color: #f7f7f7;
     box-shadow: 0 3px 8px rgba(50,50,50,.17);
     border-color: #dadada #999 #999;
